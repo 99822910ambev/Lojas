@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informações por Código</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input, button {
+      margin: 10px 0;
+    }
+    #result {
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    function getInfo() {
+      var code = document.getElementById('codeInput').value;
+      var info = {
+        '93385': ['hipermarket jardim cearesnce', 'Aumentar Corona/Spaten', 'Retirar marcas ambev', 'Info4'],
+        '90565': ['mineirao', 'Aumentar Corona/Spaten/Bud/Brahma', 'Retirar Concorrentes: Amstel/Einsebahn', 'InfoD', 'InfoE'],
+'90565': ['Distribuidora Mineira','SIM CORONA']
+        // Adicione mais códigos e informações aqui
+      };
+      var result = info[code] || ['Código não encontrado'];
+      document.getElementById('result').innerHTML = result.join('<br>');
+    }
+  </script>
+</head>
+<body>
+  <h1>DIGITE O EG DA SUA LOJA</h1>
+  <input type="text" id="codeInput" placeholder="EG">
+  <button onclick="getInfo()">Buscar</button>
+  <div id="result"></div>
+</body>
+</html>
